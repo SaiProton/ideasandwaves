@@ -1,9 +1,17 @@
+import { BrowserRouter, Route } from 'react-router-dom'
+import { GlobalStyle } from './globalStyles'
+
+import Navbar from './components/Navbar'
+import Hero from "./components/Hero";
+
 const App = () => {
   return (
-    <div className="App">
-      hey
-    </div>
-  );
+    <BrowserRouter>
+      <GlobalStyle/>
+      <Navbar/>
+      <Hero/>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
