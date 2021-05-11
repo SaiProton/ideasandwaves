@@ -3,6 +3,7 @@ import { GlobalStyle } from './globalStyles'
 
 import Navbar from './components/Navbar'
 import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <GlobalStyle/>
       <Navbar/>
       <Hero/>
+      <Footer/>
     </BrowserRouter>
   )
 }

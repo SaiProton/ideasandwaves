@@ -11,7 +11,7 @@ export const HeroContainer = styled.div`
 export const HeroContent = styled.div`
   height: calc(100vh - 80px);
   max-height: 100%;
-  width: 100vw;
+  width: 100%;
   padding: 0 calc((100vw - 1300px) / 2);
 `
 
@@ -38,17 +38,18 @@ export const HeroItems = styled.div`
   text-transform: uppercase;
   line-height: 1;
   font-weight: bold;
+  text-align: left;
   
   @media screen and (max-width: 900px) {
     width: 100%;
     text-align: center;
     justify-content: center;
     align-items: center;
-    line-height: 1.2;
+    line-height: 1.5;
   }
   
   h1 {
-    font-size: clamp(2.5rem, 8vh, 5rem);
+    font-size: clamp(2rem, 6vw, 4rem);
     margin-bottom: 1rem;
     box-shadow: 3px 5px #35BAED;
     letter-spacing: 3px;

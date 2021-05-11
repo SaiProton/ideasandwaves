@@ -7,7 +7,7 @@ import {
   MenuItemContainer,
   MenuItem,
   MenuIcon
-} from './NavbarComponents'
+} from './NavbarElements'
 
 import { useState } from 'react'
 
