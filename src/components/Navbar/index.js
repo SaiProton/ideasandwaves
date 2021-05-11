@@ -2,12 +2,13 @@ import {
   Nav,
   NavContainer,
   NavHeader,
-  MenuToggle,
   NavMenu,
-  MenuItemContainer,
-  MenuItem,
-  MenuIcon
 } from './NavbarElements'
+
+import {
+  Menu,
+  MenuItem,
+} from './NavbarConstructions'
 
 import { useState } from 'react'
 
@@ -24,19 +25,11 @@ const Navbar = () => {
     <Nav>
       <NavContainer>
         <NavHeader src={IdeasWavesLogo} alt={'Logo'}/>
-        <MenuToggle onClick={toggle}>
-          <MenuIcon/>
-        </MenuToggle>
+        <Menu onClick={toggle}/>
         <NavMenu isOpen={isOpen}>
-          <MenuItemContainer>
-            <MenuItem>Home</MenuItem>
-          </MenuItemContainer>
-          <MenuItemContainer>
-            <MenuItem>Services</MenuItem>
-          </MenuItemContainer>
-          <MenuItemContainer>
-            <MenuItem>Market</MenuItem>
-          </MenuItemContainer>
+          <MenuItem name={'Home'}/>
+          <MenuItem name={'Services'}/>
+          <MenuItem name={'Market'}/>
         </NavMenu>
       </NavContainer>
     </Nav>

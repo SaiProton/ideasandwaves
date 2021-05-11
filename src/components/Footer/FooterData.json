@@ -1,0 +1,19 @@
+{
+  "info": {
+    "header": "Info",
+    "links": [
+      {
+        "name": "Portfolio",
+        "href": "/"
+      },
+      {
+        "name": "Referrals",
+        "href": "/"
+      },
+      {
+        "name": "Terms of Service",
+        "href": "/"
+      }
+    ]
+  }
+}

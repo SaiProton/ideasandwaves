@@ -9,8 +9,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <GlobalStyle/>
-      <Navbar/>
-      <Hero/>
+      <Route path={'/'}>
+        <Navbar/>
+        <Hero/>
+      </Route>
       <Footer/>
     </BrowserRouter>
   )

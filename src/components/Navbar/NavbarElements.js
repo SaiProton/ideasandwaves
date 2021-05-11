@@ -38,16 +38,6 @@ export const MenuToggle = styled.div`
   }
 `
 
-export const MenuIcon = () => {
-  return(
-    <>
-      <MenuBar/>
-      <MenuBar/>
-      <MenuBar/>
-    </>
-  )
-}
-
 export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
@@ -76,7 +66,7 @@ export const MenuItemContainer = styled.div`
   margin: 1rem 0;
 `
 
-export const MenuItem = styled(Link)`
+export const MenuItemLink = styled(Link)`
   color: #000;
   display: flex;
   justify-content: center;
@@ -96,7 +86,7 @@ export const MenuItem = styled(Link)`
   }
 `
 
-const MenuBar = styled.span`
+export const MenuBar = styled.span`
   display: block;
   width: 25px;
   height: 3px;

@@ -44,12 +44,12 @@ export const FooterLinkItems = styled.div`
     font-size: 0.9rem;
     text-decoration: none;
     margin-bottom: 0.5rem;
-    transition: 0.3s ease-in-out;
-  }
-  
-  a:hover {
-    color: #e9e9e9;
-    transition: 0.3s ease-in-out;
+    transition: 0.1s ease-in-out;
+    
+    &:hover {
+      color: #d8d8d8;
+      transition: 0.1s ease-in-out;
+    }
   }
   
   @media screen and (max-width: 900px) {
@@ -104,4 +104,10 @@ export const SocialIcons = styled.div`
 export const SocialIconLink = styled.a`
   color: #fff;
   font-size: 24px;
+  transition: color 0.1s ease-in-out;
+  
+  &:hover {
+    color: ${props => props.hoverColor};
+    transition: color 0.1s ease-in-out;
+  }
 `

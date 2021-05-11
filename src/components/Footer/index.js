@@ -2,7 +2,6 @@ import {
   FooterContainer,
   FooterLinks,
   FooterLinkWrapper,
-  FooterLinkItems,
   SocialMedia,
   SocialMediaWrap,
   FooterLogo,
@@ -10,32 +9,22 @@ import {
   SocialIconLink
 } from './FooterElements'
 
+import {FooterSection} from "./FooterConstructions";
+
 import {FaFacebook, FaLinkedin, FaTwitter} from "react-icons/all";
+
+import { FooterData } from "./FooterData";
 
 const Footer = () => {
   return(
     <FooterContainer>
       <FooterLinks>
         <FooterLinkWrapper>
-          <FooterLinkItems>
-            <h2>About Us</h2>
-            <a href={'/'}>How it works</a>
-            <a href={'/'}>Testimonials</a>
-            <a href={'/'}>Careers</a>
-          </FooterLinkItems>
-          <FooterLinkItems>
-            <h2>Contact</h2>
-            <a href={'/'}>1-519-860-1374</a>
-            <a href={'mailto:support@ideaswaves.com'}>Email Us</a>
-          </FooterLinkItems>
+          <FooterSection data={FooterData.about}/>
+          <FooterSection data={FooterData.info}/>
         </FooterLinkWrapper>
         <FooterLinkWrapper>
-          <FooterLinkItems>
-            <h2>Info</h2>
-            <a href={'/'}>Portfolio</a>
-            <a href={'/'}>Referrals</a>
-            <a href={'/'}>Terms of Service</a>
-          </FooterLinkItems>
+          <FooterSection data={FooterData.contact}/>
         </FooterLinkWrapper>
       </FooterLinks>
       <SocialMedia>
@@ -43,13 +32,22 @@ const Footer = () => {
           <FooterLogo to={'/'}>IDEAS & WAVES</FooterLogo>
           <p>&copy; Ideas & Waves Inc. 2021</p>
           <SocialIcons>
-            <SocialIconLink href={'/'}>
+            <SocialIconLink
+              href={'https://www.facebook.com/ideasandwaves'}
+              hoverColor={'#4267B2'}
+              ariaLabel={'Facebook'}>
               <FaFacebook/>
             </SocialIconLink>
-            <SocialIconLink href={'/'}>
+            <SocialIconLink
+              href={'https://twitter.com/IdeasandWaves'}
+              hoverColor={'#1DA1F2'}
+              ariaLabel={'Twitter'}>
               <FaTwitter/>
             </SocialIconLink>
-            <SocialIconLink href={'/'}>
+            <SocialIconLink
+              href={'http://www.linkedin.com/company/ideas-and-waves/'}
+              hoverColor={'#0E76A8'}
+              ariaLabel={'LinkedIn'}>
               <FaLinkedin/>
             </SocialIconLink>
           </SocialIcons>
