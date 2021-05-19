@@ -16,9 +16,14 @@ import IdeasWavesLogo from '../../images/logo.jpg'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [route, setRoute] = useState('/' + window.location.href.split('/')[3])
 
   const toggle = () => {
     setIsOpen(!isOpen)
+  }
+
+  const refreshRoute = (path) => {
+    setRoute(path)
   }
 
   return(
@@ -27,9 +32,9 @@ const Navbar = () => {
         <NavHeader src={IdeasWavesLogo} alt={'Logo'}/>
         <Menu onClick={toggle}/>
         <NavMenu isOpen={isOpen}>
-          <MenuItem name={'Home'}/>
-          <MenuItem name={'Services'}/>
-          <MenuItem name={'Market'}/>
+          <MenuItem name={'Home'} path={'/'} route={route} onClick={() => refreshRoute('/')}/>
+          <MenuItem name={'Services'} path={'/services'} route={route} onClick={() => refreshRoute('/services')}/>
+          <MenuItem name={'Market'} path={'/market'} route={route} onClick={() => refreshRoute('/market')}/>
         </NavMenu>
       </NavContainer>
     </Nav>

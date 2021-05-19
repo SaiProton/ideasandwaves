@@ -1,9 +1,9 @@
 import {MenuItemContainer, MenuItemLink, MenuBar, MenuToggle} from "./NavbarElements";
 
-export const MenuItem = ({ name }) => {
+export const MenuItem = ({ name, path, route, onClick }) => {
   return(
-    <MenuItemContainer>
-      <MenuItemLink to={'/'}>{name}</MenuItemLink>
+    <MenuItemContainer path={path} route={route}>
+      <MenuItemLink to={path} route={route} onClick={onClick}>{name}</MenuItemLink>
     </MenuItemContainer>
   )
 }

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, {css} from "styled-components"
 import { Link } from "react-router-dom";
 
 export const Nav = styled.nav`
@@ -64,6 +64,12 @@ export const MenuItemContainer = styled.div`
   height: 80px;
   transition: 0.2s ease-in-out;
   margin: 1rem 0;
+  
+  ${props => props.path === props.route && css`
+    background: #667db6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  `}
 `
 
 export const MenuItemLink = styled(Link)`
@@ -76,9 +82,13 @@ export const MenuItemLink = styled(Link)`
   height: 100%;
   transition: color 0.2s ease-in-out;
   
+  ${props => props.to === props.route && css`
+    color: white;
+  `}
+  
   &:hover {
     transition: color 0.2s ease-in-out;
-    color: #35BAED;
+    color: ${props => props.to === props.route && 'aquamarine' || 'darkcyan'};;
   }
   
   @media screen and (max-width: 900px) {

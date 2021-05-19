@@ -1,5 +1,7 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import {Link} from "react-router-dom";
+
+import img from '../../images/wave.png'
 
 export const FooterContainer = styled.footer`
   background-color: #131313;
@@ -110,4 +112,52 @@ export const SocialIconLink = styled.a`
     color: ${props => props.hoverColor};
     transition: color 0.1s ease-in-out;
   }
+`
+
+const waveAnim = keyframes`
+  0% {background-position-x: 0}
+  100% {background-position-x: 1000px}
+`
+
+export const WaveSection = styled.section`
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-top: -100px;
+  
+  & :nth-child(1) {
+    animation: ${waveAnim} 30s linear infinite;
+  }
+  
+  & :nth-child(2) {
+    animation: ${waveAnim} 15s reverse linear infinite;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+  }
+  
+  & :nth-child(3) {
+    animation: ${waveAnim} 25s linear infinite;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+  }
+  
+  & :nth-child(4) {
+    animation: ${waveAnim} 5s reverse linear infinite;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+  }
+`
+
+export const Wave = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(${img});
+  filter: brightness(7.5%);
+  background-size: 1000px 100px;
 `

@@ -1,4 +1,4 @@
-import { FooterLinkItems } from "./FooterElements";
+import { FooterLinkItems, WaveSection, Wave } from "./FooterElements";
 
 export const FooterSection = ({ data }) => {
   return(
@@ -10,5 +10,16 @@ export const FooterSection = ({ data }) => {
         )
       })}
     </FooterLinkItems>
+  )
+}
+
+export const FooterWave = () => {
+  return(
+    <WaveSection>
+      <Wave/>
+      <Wave/>
+      <Wave/>
+      <Wave/>
+    </WaveSection>
   )
 }
