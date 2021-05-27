@@ -5,10 +5,19 @@ import {
   HeroVideo,
 } from './HeroElements'
 
-import { FaAngleDoubleRight } from "react-icons/fa";
-import BackgroundVideo from '../../videos/WaterCaustics.mp4'
+import { useHistory } from 'react-router-dom'
 
-const Hero = () => {
+import { FaAngleDoubleRight } from "react-icons/fa"
+import BackgroundVideo from '../../../videos/WaterCaustics.mp4'
+
+const Hero = ({ refreshRoute }) => {
+  const history = useHistory()
+
+  const handleOnClick = () => {
+    history.push('/services')
+    refreshRoute('/services')
+  }
+
   return(
     <HeroContainer>
       <HeroVideo autoPlay={true} muted={true} loop={true}>
@@ -18,7 +27,7 @@ const Hero = () => {
         <HeroItems>
           <h1>Your <span style={{color: "#35BAED"}}>Ideas</span><br/> come to life.</h1>
           <p>Come see for yourself:</p>
-          <button>Our Services&nbsp; <FaAngleDoubleRight/></button>
+          <button onClick={handleOnClick}>Our Services&nbsp; <FaAngleDoubleRight/></button>
         </HeroItems>
       </HeroContent>
     </HeroContainer>
