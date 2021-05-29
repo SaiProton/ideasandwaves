@@ -39,11 +39,12 @@ export const FooterLinkItems = styled.div`
   h2 {
     margin-bottom: 16px;
     color: #fff;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
   }
   
   a {
     color: #fff;
-    font-size: 0.9rem;
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
     text-decoration: none;
     margin-bottom: 0.5rem;
     transition: 0.1s ease-in-out;

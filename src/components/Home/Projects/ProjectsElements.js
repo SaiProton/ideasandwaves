@@ -22,6 +22,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 25%;
+  text-transform: uppercase;
 
   @media screen and (max-width: 900px) {
     height: 15%;

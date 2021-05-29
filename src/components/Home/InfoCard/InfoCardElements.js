@@ -31,6 +31,7 @@ export const CardTextContainer = styled.div`
 
   h1 {
     width: 100%;
+    text-transform: uppercase;
     font-size: 3rem;
     margin: 2rem;
   }
@@ -43,7 +44,7 @@ export const CardTextContainer = styled.div`
 
   @media screen and (max-width: 900px) {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0 2rem;
     border-style: none;
     text-align: center;
   }
