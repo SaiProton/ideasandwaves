@@ -10,7 +10,7 @@ export const Nav = styled.nav`
   z-index: 10;
   height: 80px;
   background-color: #ffffff;
-  box-shadow: 0 1px 4px #00000055;
+  box-shadow: 0 1px 4px ${props => (props.shadow)};
 `
 
 export const NavContainer = styled.div`
@@ -73,7 +73,8 @@ export const MenuItemContainer = styled.div`
 `
 
 export const MenuItemLink = styled(Link)`
-  color: #000;
+  color: #1E6B88;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,8 +88,8 @@ export const MenuItemLink = styled(Link)`
   `}
   
   &:hover {
-    transition: color 0.2s ease-in-out;
-    color: ${props => props.to === props.route && 'aquamarine' || 'darkcyan'};;
+    transition: color 0.1s ease-in-out;
+    color: ${props => props.to === props.route && 'aquamarine' || 'black'};;
   }
   
   @media screen and (max-width: 900px) {
