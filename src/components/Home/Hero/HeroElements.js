@@ -162,26 +162,3 @@ export const HeroContacts = styled.div`
   width: 50%;
   justify-content: center;
 `
-
-export const ContactButton = styled.button`
-  border-radius: 100px;
-  padding: 0.4rem 1rem;
-
-  font-weight: bold;
-  border: none;
-  outline: none;
-  color: #ffffff;
-    
-  background: #35BAED;
-  //background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
-  //background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-  transition: 0.1s ease-out;
-    
-  &:hover {
-    color: #ffffff;
-    background: #2a8eb6;
-    transition: 0.1s ease-out;
-    cursor: pointer;
-  }
-`

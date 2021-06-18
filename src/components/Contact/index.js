@@ -33,6 +33,7 @@ const Contact = ({ activated, toggle }) => {
             <EntryBox name='body' label='Message' rows='10'/>
             <FormSubmit type='submit' value='Send Message'/>
           </ContactForm>
+          {/* TODO: Put phone number, email in contactmisc */}
           <ContactMisc>
             <ContactPicture />
           </ContactMisc>
