@@ -5,10 +5,10 @@ import WindmillBG from '../../images/windmills.png'
 import TechBG from '../../images/techbg.png'
 import Projects from "./Projects"
 
-const Home = ({ refreshRoute }) => {
+const Home = ({ refreshRoute, toggleContact }) => {
   return(
     <>
-      <Hero refreshRoute={refreshRoute}/>
+      <Hero refreshRoute={refreshRoute} toggleContact={toggleContact}/>
       <InfoCard 
         header="Who we are" 
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

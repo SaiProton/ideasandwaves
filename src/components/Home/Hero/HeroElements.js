@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const HeroContainer = styled.div`
   height: calc(100vh - 80px);
+  min-height: 520px;
   /* background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.8),

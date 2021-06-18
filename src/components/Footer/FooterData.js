@@ -18,15 +18,15 @@ export const FooterData = {
   },
 
   'contact' : {
-    'header': 'Contact',
+    'header': 'Contact Us',
     'links': [
       {
-        'name': '1-519-860-1374',
+        'name': '1-800-277-3529',
         'href': '/'
       },
       {
-        'name': 'support@ideaswaves.com',
-        'href': 'mailto:support@ideaswaves.com'
+        'name': 'contact@ideaswaves.com',
+        'href': 'mailto:contact@ideaswaves.com'
       },
     ]
   },

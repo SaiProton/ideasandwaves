@@ -18,7 +18,7 @@ import { FaAngleDoubleRight } from "react-icons/fa"
 import AmpersandLogo from '../../../images/ampersand.svg'
 import BackgroundVideo from '../../../videos/WaterCaustics.mp4'
 
-const Hero = ({ refreshRoute }) => {
+const Hero = ({ refreshRoute, toggleContact }) => {
   const history = useHistory()
 
   const handleOnClick = () => {
@@ -52,7 +52,7 @@ const Hero = ({ refreshRoute }) => {
           <p>Providing Quality Designs Since 2012</p>
         </HeroFooter>
         <HeroContacts>
-          <ContactButton>Contact Us</ContactButton>
+          <ContactButton onClick={toggleContact}>Contact Us</ContactButton>
         </HeroContacts>
       </SubHeroContent>
     </HeroContainer>
