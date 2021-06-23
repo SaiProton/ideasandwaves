@@ -1,232 +1,137 @@
-import styled, {keyframes} from 'styled-components'
+import styled from 'styled-components'
 
-export const ServicesContainer = styled.div`
-  width: 100%;
-  height: 100vh;
-  min-height: 600px;
-`
-
-export const BubbleContainer = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  min-height: 580px;
-  z-index: -1;
-  overflow: hidden;
-  top: 80px;
-  left: 0;
-
-  background: #373B44;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-  & :nth-child(3) {
-    width:50px;
-    height:50px;
-    left:35%;
-    animation-duration:7s;
-    animation-delay:2s;
-  }
-  
-  & :nth-child(4){
-    width:80px;
-    height:80px;
-    left:50%;
-    animation-duration:11s;
-    animation-delay:0s;
-  }
-  
-  & :nth-child(5){
-    width:35px;
-    height:35px;
-    left:55%;
-    animation-duration:6s;
-    animation-delay:1s;
-  }
-  
-  & :nth-child(6){
-    width:45px;
-    height:45px;
-    left:65%;
-    animation-duration:8s;
-    animation-delay:3s;
-  }
-  
-  & :nth-child(7){
-    width:90px;
-    height:90px;
-    left:70%;
-    animation-duration:12s;
-    animation-delay:2s;
-  }
-  
-  & :nth-child(8){
-    width:25px;
-    height:25px;
-    left:80%;
-    animation-duration:6s;
-    animation-delay:2s;
-  }
-  
-  & :nth-child(9){
-    width:15px;
-    height:15px;
-    left:70%;
-    animation-duration:5s;
-    animation-delay:1s;
-  }
-  
-  & :nth-child(10){
-    width:90px;
-    height:90px;
-    left:25%;
-    animation-duration:10s;
-    animation-delay:4s;
-  }
-`
-
-const bubbleRise = keyframes`
-  0% {
-    bottom: -100px;
-    transform: translateX(0);
-  }
-  
-  50% {
-    transform: translate(100px);
-  }
-  
-  100% {
-    bottom: 1080px;
-    transform: translateX(-200px);
-  }
-`
-
-export const Bubble = styled.div`
-  position: absolute;
-  bottom: -100px;
-  width: 40px;
-  height: 40px;
-  background: #000000;
-  border-radius: 50%;
-  opacity: 0.5;
-  animation: ${bubbleRise} 10s infinite ease-in;
-`
-
-export const Content = styled.div`
-  display: flex;
-
-  padding: 3rem 0 3rem 3rem;
-
-  width: 100%;
-  height: 100%;
-
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0)
-  );
+export const ServicesHeader = styled.h1`
+  margin: 2rem;
+  color: #1E6B88;
 
   @media screen and (max-width: 900px) {
-    flex-direction: column;
-    padding: 3rem 2rem;
-    align-items: center;
-
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 0)
-    );
+    text-align: center;
   }
 `
 
-export const Heading = styled.div`
+export const ServiceContainer = styled.div`
+  padding: 2rem;
+  border-style: solid;
+  border-width: 1px 0 1px 0;
+  border-color: #eee;
+
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding-right: 5rem;
-  text-transform: uppercase;
+`
 
-  h1 {
-    color: white;
-    text-align: left;
-    font-size: clamp(1rem, 8vw, 3rem);
-    box-shadow: 0 5px #35BAED;
+export const ServicesMain = styled.div`
+  display: flex;
+  align-items: center;
+  height: 40vh;
+  min-height: 300px;
+
+  @media screen and (max-width: 900px) {
+    min-height: 450px;
+
+    background-image: url(${props => props.image});
+    background-color: #ffffffbb;
+    background-blend-mode: overlay;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+`
+
+export const ServiceContent = styled.div`
+  width: 50%;
+
+  h2 {
+    color:#35BBEE;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
   }
 
   p {
-    color: gray;
     font-weight: bold;
-    margin: 2vw 0;
-    text-align: left;
-    font-size: clamp(0.6rem, 2vw, 1.5rem);
-    line-height: clamp(1rem, 2vw, 2rem);
+    color: #1E6B88;
+    margin: 1rem 0 1rem 1rem;
+    line-height: clamp(1.2rem, 2vw, 2rem);
+  }
+
+  a {
+    display: block;
+    font-weight: bold;
+    color: #828282;
+    margin-left: 1rem;
   }
 
   @media screen and (max-width: 900px) {
-    height: 20%;
-    padding: 0;
-    align-items: center;
+    width: 100%;
 
-    h1 {
+    h2 {
       text-align: center;
     }
 
     p {
+      margin: 1rem 0 0 0;
+      text-align: center;
+    }
+
+    a {
+      margin: 1rem 0 0 0;
       text-align: center;
     }
   }
 `
 
-export const Items = styled.div`
+export const ServiceMisc = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: left;
-
-  width: 100%;
-
-  @media screen and (max-width: 900px) {
-    height: 60%;
-  }
-`
-
-export const ItemContainer = styled.div`
-  display: flex;
-  align-items: center;
-
-  border-radius: 1000px 0 0 1000px;
-  width: 100%;
-  height: clamp(100px, 15vw, 150px);
-  background: linear-gradient(
-    to right,
-    #75c1ad,
-    #35BAED
-  );
-
-  @media screen and (max-width: 900px) {
-    border-radius: 1000px;
-  }
-`
-
-export const ItemImage = styled.div`
-  aspect-ratio: 1;
+  width: 50%;
   height: 100%;
-  background: url(${props => props.src});
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 1000px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
 
-  box-shadow: 5px 0 #00000011;
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 `
 
-export const ItemContent = styled.div`
-  margin-left: clamp(1rem, 5vw, 2rem);
-  margin-right: 1rem;
+export const ServiceImage = styled.img`
+  height: 100%;
+`
 
-  h1 {
-    font-size: clamp(1.2rem, 4vw, 3rem);
-  }
+export const ServiceFooter = styled.div`
+  height: 20%;
+  width: 100%;
+  display: flex;
+  padding: 1rem 0 0 0;
 
   p {
-    font-size: clamp(0.7rem, 2vw, 1.5rem);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 50%;
+    color: #828282;
+    font-size: 0.75rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column-reverse;
+    align-items: center;
+
+    p {
+      text-align: center;
+      margin: 1rem;
+    }
+  }
+`
+
+export const ServiceRequest = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 50%;
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    button {
+      width: 75%;
+      font-size: 1.2rem;
+    }
   }
 `

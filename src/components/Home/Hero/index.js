@@ -9,8 +9,9 @@ import {
   SubHeroContent,
   HeroFooter,
   HeroContacts,
-  ContactButton
 } from './HeroElements'
+
+import { BlueButton } from '../../simpleComponents'
 
 import { useHistory } from 'react-router-dom'
 
@@ -52,7 +53,7 @@ const Hero = ({ refreshRoute, toggleContact }) => {
           <p>Providing Quality Designs Since 2012</p>
         </HeroFooter>
         <HeroContacts>
-          <ContactButton onClick={toggleContact}>Contact Us</ContactButton>
+          <BlueButton onClick={toggleContact}>Contact Us</BlueButton>
         </HeroContacts>
       </SubHeroContent>
     </HeroContainer>
