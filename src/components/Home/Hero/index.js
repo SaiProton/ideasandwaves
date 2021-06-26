@@ -2,19 +2,14 @@ import {
   HeroContainer,
   HeroContent,
   HeroItems,
-  HeroVideo,
   ContentContainer,
   HeroImageContainer,
   HeroImage,
-  SubHeroContent,
-  HeroFooter,
-  HeroContacts,
 } from './HeroElements'
 
-import { BlueButton } from '../../simpleComponents'
+import { SubHero } from '../../simpleConstructions'
 
 import { useHistory } from 'react-router-dom'
-
 import { FaAngleDoubleRight } from "react-icons/fa"
 import AmpersandLogo from '../../../images/ampersand.svg'
 import BackgroundVideo from '../../../videos/WaterCaustics.mp4'
@@ -48,14 +43,7 @@ const Hero = ({ refreshRoute, toggleContact }) => {
           </HeroItems>
         </ContentContainer>
       </HeroContent>
-      <SubHeroContent>
-        <HeroFooter>
-          <p>Providing Quality Designs Since 2012</p>
-        </HeroFooter>
-        <HeroContacts>
-          <BlueButton onClick={toggleContact}>Contact Us</BlueButton>
-        </HeroContacts>
-      </SubHeroContent>
+      <SubHero toggleContact={toggleContact}/>
     </HeroContainer>
   )
 }
