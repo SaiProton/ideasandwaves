@@ -1,13 +1,16 @@
 import Hero from './Hero'
 import InfoSegment from './InfoSegment'
+import { InfoData } from './InfoSegment/InfoData'
 
 const Blog = ({ toggleContact }) => {
   return(
     <>
       <Hero toggleContact={toggleContact}/>
-      <InfoSegment/>
-      <InfoSegment/>
-      <InfoSegment/>
+
+      { Object.keys(InfoData).map(key => {
+        return <InfoSegment data={InfoData[key]}/>
+      })}
+      
     </>
   )
 }

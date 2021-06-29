@@ -14,7 +14,7 @@ export const LeftContainer = styled.div`
 
   padding: 2rem;
 
-  border-right: 2px solid #bdbcbc;
+  border-right: 2px solid #bcbdbd;
 `
 
 export const HeaderContainer = styled.div`

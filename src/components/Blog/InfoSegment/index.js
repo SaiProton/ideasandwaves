@@ -1,17 +1,52 @@
 import {
   SegmentContainer,
   LeftContainer,
-  RightContainer
+  RightContainer,
+  SegmentPicture,
+  PictureColorBox,
+  HeaderContainer,
+  ItemContainer,
+  ItemPicture,
+  ItemHeader,
+  MoreLink
 } from './InfoSegmentElements'
 
+import { FaChevronDown } from 'react-icons/fa'
 
-const InfoSegment = () => {
+
+const InfoSegment = ({data}) => {
   return(
     <SegmentContainer>
       <LeftContainer>
-        
+        <PictureColorBox color={data.color}>
+          <SegmentPicture/>
+        </PictureColorBox>
       </LeftContainer>
       <RightContainer>
+
+        <HeaderContainer color={data.color}>
+          <h1>{data.header}</h1>
+          <h5>{data.desc}</h5>
+        </HeaderContainer>
+
+        {data.items.map(item => {
+          return(
+            <ItemContainer>
+              <ItemPicture/>
+              <ItemHeader color={data.color}>
+                <h5>{data.header}</h5>
+                <h4>{item.headline}</h4>
+                <h6>{item.author}</h6>
+              </ItemHeader>
+            </ItemContainer>
+          )
+        })}
+
+        <MoreLink>
+          <FaChevronDown/>
+          &nbsp;&nbsp;
+          Show More
+        </MoreLink>
 
       </RightContainer>
     </SegmentContainer>
