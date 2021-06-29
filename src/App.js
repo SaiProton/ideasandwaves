@@ -7,6 +7,7 @@ import Services from "./components/Services";
 import Home from './components/Home';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
+import Blog from './components/Blog'
 
 import { useState } from 'react'
 
@@ -34,7 +35,10 @@ const App = () => {
       <Route path={'/services'} component={Services}/>
       <Route path={'/projects'}>
         <Projects toggleContact={toggleContact}/>
-      </Route> 
+      </Route>
+      <Route path={'/blog'}>
+        <Blog toggleContact={toggleContact}/>
+      </Route>
       <Footer/>
     </BrowserRouter>
   )
