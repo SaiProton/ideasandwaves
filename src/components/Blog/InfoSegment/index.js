@@ -5,16 +5,18 @@ import {
   SegmentPicture,
   PictureColorBox,
   HeaderContainer,
-  ItemContainer,
-  ItemPicture,
-  ItemHeader,
-  MoreLink
 } from './InfoSegmentElements'
 
-import { FaChevronDown } from 'react-icons/fa'
-
+import { useState } from 'react'
+import { Item, More } from './InfoConstructions'
 
 const InfoSegment = ({data}) => {
+  const [more, setMore] = useState(false)
+
+  const toggleMore = () => {
+    setMore(!more)
+  }
+
   return(
     <SegmentContainer>
       <LeftContainer>
@@ -29,24 +31,15 @@ const InfoSegment = ({data}) => {
           <h5>{data.desc}</h5>
         </HeaderContainer>
 
-        {data.items.map((item, index) => {
-          return(
-            <ItemContainer key={index}>
-              <ItemPicture/>
-              <ItemHeader color={data.color}>
-                <h5>{data.header}</h5>
-                <h4>{item.headline}</h4>
-                <h6>{item.author}</h6>
-              </ItemHeader>
-            </ItemContainer>
-          )
-        })}
+        {
+          data.items.slice(0, more ? data.items.length : 3).map((item, index) => {
+            return <Item key={index} data={data} item={item} more={more}/>
+          })
+        }
 
-        <MoreLink>
-          <FaChevronDown/>
-          &nbsp;&nbsp;
-          Show More
-        </MoreLink>
+        {
+          data.items.length > 2 && <More more={more} toggle={toggleMore}/>
+        }
 
       </RightContainer>
     </SegmentContainer>

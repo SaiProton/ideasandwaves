@@ -2,11 +2,10 @@ import styled from 'styled-components'
 
 export const SegmentContainer = styled.div`
   display: flex;
-  height: calc(150vh - 80px);
+  height: fit-content;
 `
 
 export const LeftContainer = styled.div`
-  height: 100%;
   width: calc(100% / 3);
   border-right: 2px solid #bcbdbd;
 `
@@ -95,9 +94,11 @@ export const ItemHeader = styled.div`
 `
 
 export const MoreLink = styled.p`
-  margin-left: 3rem;
+  margin: 2rem 0 2rem 3rem;
   font-weight: bold;
   color: #7e7e7e;
+  width: fit-content;
+  user-select: none;
 
   cursor: pointer;
 

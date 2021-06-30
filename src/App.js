@@ -21,7 +21,6 @@ const App = () => {
 
   const toggleContact = () => {
     setContact(!contact)
-    console.log(contact);
   }
 
   return (
