@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const CardContainer = styled.div`
   width: 100%;
   height: 50vh;
-  min-height: 350px;
+  min-height: 480px;
   background: white;
   display: flex;
   justify-content: center;
@@ -22,9 +22,6 @@ export const CardTextContainer = styled.div`
   justify-content: left;
   align-items: center;
   text-align: left;
-  border-style: solid;
-  border-width: 0 0 1px 0;
-  border-color: #eee;
   padding-left: 2rem;
   height: 100%;
   width: 50%;
@@ -32,21 +29,41 @@ export const CardTextContainer = styled.div`
   h1 {
     width: 100%;
     text-transform: uppercase;
-    font-size: 3rem;
-    margin: 2rem;
+    font-size: 2rem;
+    margin-left: 5rem;
+    color: #17495B;
+  }
+
+  h2 {
+    margin: 1rem 0 1rem 0;
+    width: 100%;
+    margin-left: 10rem;
+    color: #1E6B88;
   }
 
   p {
-    width: 100%;
+    width: 75%;
     line-height: 2rem;
-    color: gray;
   }
 
   @media screen and (max-width: 900px) {
     width: 100%;
-    padding: 0 2rem;
+    padding: 2rem 0;
     border-style: none;
     text-align: center;
+    justify-content: center;
+
+    h1 {
+      margin: 0;
+    }
+
+    h2 {
+      margin: 1rem 0;
+    }
+
+    p {
+      width: 90%;
+    }
   }
 `
 

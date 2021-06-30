@@ -18,20 +18,27 @@ export const ProjectsContainer = styled.div`
 
 export const HeaderContainer = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  margin-left: 10rem;
   width: 100%;
   height: 25%;
-  text-transform: uppercase;
+  
+  h1 {
+    text-transform: uppercase;
+    color: #17495B;
+  }
 
   @media screen and (max-width: 900px) {
     height: 15%;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
   }
 `
 
 export const ItemsContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   height: 75%;
@@ -47,14 +54,29 @@ export const ProjectItem = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100%;
-  color: gray;
+  width: calc(100vw / 4);
 
-  background-color: lightgray;
-  border: 1px dashed white;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  border-radius: 5px;
+
+  background-color: #bcbdbd;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #848484;
+    transition: 0.2s ease-in-out;
+  }
 
   @media screen and (max-width: 900px) {
     width: 100%;
     height: 100%;
+    border-radius: 0;
+
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: white;
   }
 `

@@ -1,5 +1,6 @@
 import Hero from "./Hero"
 import InfoCard from "./InfoCard"
+import Services from './Services'
 
 import WindmillBG from '../../images/windmills.png'
 import TechBG from '../../images/techbg.png'
@@ -9,15 +10,20 @@ const Home = ({ refreshRoute, toggleContact }) => {
   return(
     <>
       <Hero refreshRoute={refreshRoute} toggleContact={toggleContact}/>
+
+      <Services/>
+
       <InfoCard 
-        header="Who we are" 
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        header="WHO" 
+        text="We are Ideas and Waves. An ambitious Digital Design and Marketing Agency that empower businesses in Toronto and beyond by building their digital footprint. Based in Toronto we specialize in web design, branding and marketing, and digital design. With our help, small businesses are able to have a viable and affordable ally in the digital design and development space."
+        tagline='Tagline'
         img={WindmillBG}
         />
         
       <InfoCard 
-        header="What we do" 
-        text="Morbi placerat libero et ante lobortis, nec pretium leo imperdiet. Cras eu nibh rhoncus mauris sagittis finibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus non mattis arcu, in sollicitudin massa. Cras tincidunt nunc sodales, cursus tortor et, accumsan magna. Vestibulum id lobortis nunc, ac gravida libero. Duis varius nunc dapibus efficitur pellentesque. Vestibulum et sapien non sem porta auctor. Vivamus condimentum turpis vel tempus condimentum. Phasellus consequat lacus sit amet urna fringilla, eget fermentum libero tincidunt."
+        header="WHAT" 
+        text="We are digitally, technically, and creatively skilled with experience in bringing other brands to life. Our team here at Ideas and Waves is dedicated to developing and enhancing a brand's online presence through the creation of a professional website, social media marketing, brand creation and all other design needs. Our services are a one stop shop for any business, new or old that is ready to begin, resume, or expand themselves online."
+        tagline='Digital Solutions'
         img={TechBG}
         />
 

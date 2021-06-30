@@ -93,7 +93,8 @@ export const ServiceMisc = styled.div`
 `
 
 export const ServiceImage = styled.img`
-  height: 100%;
+  width: 100%;
+  max-height: 100%;
 `
 
 export const ServiceFooter = styled.div`

@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   align-content: center;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   height: 80px;
   background-color: #ffffff;
   box-shadow: 0 1px 4px ${props => (props.shadow)};

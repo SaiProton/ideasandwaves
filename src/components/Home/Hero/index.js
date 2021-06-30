@@ -12,7 +12,6 @@ import { SubHero } from '../../simpleConstructions'
 import { useHistory } from 'react-router-dom'
 import { FaAngleDoubleRight } from "react-icons/fa"
 import AmpersandLogo from '../../../images/ampersand.svg'
-import BackgroundVideo from '../../../videos/WaterCaustics.mp4'
 
 const Hero = ({ refreshRoute, toggleContact }) => {
   const history = useHistory()
@@ -24,9 +23,6 @@ const Hero = ({ refreshRoute, toggleContact }) => {
 
   return (
     <HeroContainer>
-      {/* <HeroVideo autoPlay={true} muted={true} loop={true}>
-        <source src={BackgroundVideo} type={'video/mp4'} />
-      </HeroVideo> */}
       <HeroContent>
         <ContentContainer>
           <HeroImageContainer>

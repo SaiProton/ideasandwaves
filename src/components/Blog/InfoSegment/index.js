@@ -29,9 +29,9 @@ const InfoSegment = ({data}) => {
           <h5>{data.desc}</h5>
         </HeaderContainer>
 
-        {data.items.map(item => {
+        {data.items.map((item, index) => {
           return(
-            <ItemContainer>
+            <ItemContainer key={index}>
               <ItemPicture/>
               <ItemHeader color={data.color}>
                 <h5>{data.header}</h5>

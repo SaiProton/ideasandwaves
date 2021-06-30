@@ -41,6 +41,7 @@ const Navbar = ({ route, refreshRoute }) => {
           <MenuItem name={'Home'} path={'/'} route={route} onClick={() => menuItemClick('/')}/>
           <MenuItem name={'Services'} path={'/services'} route={route} onClick={() => menuItemClick('/services')}/>
           <MenuItem name={'Projects'} path={'/projects'} route={route} onClick={() => menuItemClick('/projects')}/>
+          <MenuItem name={'Blog'} path={'/blog'} route={route} onClick={() => menuItemClick('/blog')}/> 
         </NavMenu>
       </NavContainer>
     </Nav>

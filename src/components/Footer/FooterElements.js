@@ -124,7 +124,7 @@ export const WaveSection = styled.section`
   position: relative;
   width: 100%;
   height: 100px;
-  margin-top: -100px;
+  /* margin-top: -100px; */
   
   & :nth-child(1) {
     animation: ${waveAnim} 30s linear infinite;

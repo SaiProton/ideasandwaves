@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from 'react-router-dom'
+import { HashRouter, Route } from 'react-router-dom'
 import { GlobalStyle } from './globalStyles'
 
 import Navbar from './components/Navbar'
@@ -12,7 +12,7 @@ import Blog from './components/Blog'
 import { useState } from 'react'
 
 const App = () => {
-  const [route, setRoute] = useState('/' + window.location.href.split('/')[3])
+  const [route, setRoute] = useState('/' + window.location.href.split('/')[4])
   const [contact, setContact] = useState(false)
 
   const refreshRoute = (path) => {
@@ -25,7 +25,7 @@ const App = () => {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <GlobalStyle/>
       <Navbar route={route} refreshRoute={refreshRoute}/>
       <Contact activated={contact} toggle={toggleContact}/>
@@ -40,7 +40,7 @@ const App = () => {
         <Blog toggleContact={toggleContact}/>
       </Route>
       <Footer/>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
