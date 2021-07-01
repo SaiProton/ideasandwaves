@@ -26,7 +26,7 @@ export const More = ({ more, toggle }) => {
       {
         more
         ? <> <FaChevronUp/>&nbsp;&nbsp;Show Less </>
-        : <> <FaChevronDown/>&nbsp;&nbsp;Show More</>
+        : <> <FaChevronDown/>&nbsp;&nbsp;Show More </>
       }
     </MoreLink>
   )

@@ -3,16 +3,33 @@ import styled from 'styled-components'
 export const SegmentContainer = styled.div`
   display: flex;
   height: fit-content;
+
+  @media screen and (max-width: 900px) {
+    margin: 2rem 0;
+    flex-direction: column;
+  }
 `
 
 export const LeftContainer = styled.div`
   width: calc(100% / 3);
   border-right: 2px solid #bcbdbd;
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 `
 
 export const RightContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
   height: 100%;
   width: calc(200% / 3);
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    align-items: center;
+  }
 `
 
 export const PictureColorBox = styled.div`
@@ -28,7 +45,7 @@ export const PictureColorBox = styled.div`
 
 export const SegmentPicture = styled.img`
   background: #bcbdbd;
-  margin-left: calc(-25% - 2px);
+  margin-left: -25%;
   width: 75%;
   height: 75%;
 `
@@ -48,8 +65,16 @@ export const HeaderContainer = styled.div`
   }
 
   h5 {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     color: #A8A8A8;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    height: 50%;
+    margin: 0;
+
+    text-align: center;
   }
 `
 
@@ -59,16 +84,27 @@ export const ItemContainer = styled.div`
   margin-left: 3rem;
   height: 25vh;
   min-height: 200px;
-  width: 50%;
+  width: 100%;
+
+  @media screen and (max-width: 900px) {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+  }
 `
 
 export const ItemPicture = styled.img`
   height: 75%;
-  width: calc(0.75 * 25vh);
-  margin-right: 3rem;
+  width: calc(0.75 * max(200px, 25vh));
+  margin-right: clamp(1rem, 2vw, 3rem);
   border-radius: 1000px;
 
   background: #bcbdbd;
+
+  @media screen and (max-width: 900px) {
+    height: 50%;
+    width: calc(0.50 * max(200px, 25vh));
+  }
 `
 
 export const ItemHeader = styled.div`
@@ -84,12 +120,12 @@ export const ItemHeader = styled.div`
   }
 
   h4 {
-    font-size: 2rem;
+    font-size: clamp(1rem, 2vw, 2rem);
   }
 
   h6 {
     color: #7E7E7E;
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
   }
 `
 
@@ -107,5 +143,9 @@ export const MoreLink = styled.p`
   &:hover {
     color: #5c5c5c;
     transition: color 0.1s ease-in-out;
+  }
+
+  @media screen and (max-width: 900px) {
+    margin: 0;
   }
 `

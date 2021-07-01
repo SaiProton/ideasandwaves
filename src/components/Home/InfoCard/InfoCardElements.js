@@ -8,6 +8,7 @@ export const CardContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 5rem 0;
 
   @media screen and (max-width: 900px) {
     height: 100vh;
@@ -69,26 +70,16 @@ export const CardTextContainer = styled.div`
 
 export const CardImage = styled.div`
   display: flex;
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1)
-  ), url(${props => props.src});
+
+  background: url(${props => props.src});
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+
   height: 100%;
   width: 50%;
 
   @media screen and (max-width: 900px) {
     width: 100%;
-
-    background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 1)
-    ), url(${props => props.src});
-
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 `

@@ -41,7 +41,7 @@ export const Service = styled.div`
   width: calc(100% / 3);
   min-width: 300px;
 
-  background: #bcbdbd;
+  background: #2C8FB4;
 
   border: 1px solid #ffffff;
 
@@ -56,7 +56,7 @@ export const Service = styled.div`
   }
 
   &:hover {
-    background: #848484;
+    background: #195167;
     transition: 0.2s ease-in-out;
   }
 

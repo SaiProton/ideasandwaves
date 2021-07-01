@@ -3,6 +3,12 @@ import styled from 'styled-components'
 export const HeroContainer = styled.div`
   display: flex;
   height: calc(100vh - 80px);
+  min-height: 700px;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    height: calc(200vh - 80px);
+  }
 `
 
 export const LeftContainer = styled.div`
@@ -15,6 +21,11 @@ export const LeftContainer = styled.div`
   padding: 2rem;
 
   border-right: 2px solid #bcbdbd;
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    height: 50%;
+  }
 `
 
 export const HeaderContainer = styled.div`
@@ -36,8 +47,8 @@ export const HeaderContent = styled.div`
   flex-direction: column;
 
   h1 {
-    font-size: 3rem;
-    line-height: 3.7rem;
+    font-size: clamp(2rem, 2vw, 3rem);
+    line-height: clamp(3rem, 2vw, 3.7rem);
   }
 
   h1:nth-child(1) {
@@ -49,7 +60,7 @@ export const HeaderContent = styled.div`
   }
 
   h2 {
-    line-height: 3rem;
+    line-height: clamp(2rem, 2vw, 3rem);
     color: #17495B;
   }
 
@@ -58,15 +69,36 @@ export const HeaderContent = styled.div`
     font-size: 0.9rem;
   }
 
-  button {
-    width: 50%;
-    margin: 1rem 0 1rem 0;
+  @media screen and (max-width: 900px) {
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    h3 {
+      text-align: center;
+    }
   }
 `
 
 export const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  button {
+    width: 50%;
+    margin: 1rem 0 1rem 0;
+  }
+
+  @media screen and (max-width: 900px) {
+    button {
+      align-self: center;
+    }
+  }
 `
 
 export const SocialMedia = styled.div`
@@ -91,6 +123,11 @@ export const SocialIconLink = styled.a`
 export const RightContainer = styled.div`
   height: 100%;
   width: calc(200% / 3);
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    height: 50%;
+  }
 `
 
 export const InfoChipContainer = styled.div`
@@ -98,6 +135,10 @@ export const InfoChipContainer = styled.div`
   align-items: center;
   height: calc(100% / 3);
   padding-left: 4rem;
+
+  @media screen and (max-width: 900px) {
+    padding-left: 1rem;
+  }
 `
 
 export const TextContainer = styled.div`
@@ -106,6 +147,10 @@ export const TextContainer = styled.div`
   justify-content: center;
   height: 100%;
   width: 50%;
+
+  h1 {
+    font-size: clamp(1rem, 2vw, 2rem);
+  }
 
   h3 {
     color: ${props => props.color};
@@ -130,5 +175,5 @@ export const ChipImage = styled.div`
   background: #bcbdbd;
   
   height: 80%;
-  width: 50%;
+  width: 100%;
 `

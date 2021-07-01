@@ -19,20 +19,23 @@ export const ProjectsContainer = styled.div`
 export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 10rem;
   width: 100%;
   height: 25%;
   
   h1 {
     text-transform: uppercase;
+    margin-left: 5rem;
     color: #17495B;
   }
 
   @media screen and (max-width: 900px) {
     height: 15%;
-    margin: 0;
     justify-content: center;
     text-align: center;
+
+    h1 {
+      margin: 0;
+    }
   }
 `
 
@@ -50,25 +53,16 @@ export const ItemsContainer = styled.div`
 `
 
 export const ProjectItem = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
-  width: calc(100vw / 4);
+  width: calc(100vw / 3);
 
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 1.5rem;
-
-  border-radius: 5px;
+  border: 1px solid white;
 
   background-color: #bcbdbd;
-  transition: 0.2s ease-in-out;
+  background: url(${props => props.img});
 
-  &:hover {
-    background-color: #848484;
-    transition: 0.2s ease-in-out;
-  }
+  background-size: contain;
+  background-repeat: no-repeat;
 
   @media screen and (max-width: 900px) {
     width: 100%;
@@ -78,5 +72,7 @@ export const ProjectItem = styled.div`
     border-width: 1px 0;
     border-style: solid;
     border-color: white;
+
+    background-position: center;
   }
 `
