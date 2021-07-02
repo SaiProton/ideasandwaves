@@ -1,4 +1,4 @@
-import { HashRouter, Route } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import { GlobalStyle } from './globalStyles'
 
 import Navbar from './components/Navbar'
@@ -8,6 +8,7 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Blog from './components/Blog'
+import LearnMore from './components/Learn-More';
 
 import { useState } from 'react'
 
@@ -28,14 +29,21 @@ const App = () => {
       <GlobalStyle/>
       <Navbar route={route} refreshRoute={refreshRoute}/>
       <Contact activated={contact} toggle={toggleContact}/>
+
       <Route exact path={'/'}>
         <Home refreshRoute={refreshRoute} toggleContact={toggleContact}/>
       </Route>
-      <Route path={'/services'} component={Services}/>
-      <Route path={'/projects'}>
+
+      <Switch>
+        <Route exact path={'/services'} component={Services}/>
+        <Route path={'/services'} component={LearnMore}/>
+      </Switch>
+
+      <Route exact path={'/projects'}>
         <Projects toggleContact={toggleContact}/>
       </Route>
-      <Route path={'/blog'}>
+
+      <Route exact path={'/blog'}>
         <Blog toggleContact={toggleContact}/>
       </Route>
       <Footer/>

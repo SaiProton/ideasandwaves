@@ -9,15 +9,16 @@ import {
 } from './ServicesElements'
 
 import { BlueButton } from '../simpleComponents'
+import { Link } from 'react-router-dom'
 
-export const Service = ({ title, content, imgpath }) => {
+export const Service = ({ title, content, imgpath, moreUrl }) => {
   return (
     <ServiceContainer>
       <ServicesMain image={imgpath}>
         <ServiceContent>
           <h2>{title}</h2>
           <p>{content}</p>
-          <a href='/'>Learn more</a>
+          <Link to={`/services/${moreUrl}`}>Learn more</Link>
         </ServiceContent>
         <ServiceMisc>
           <ServiceImage src={imgpath} />
