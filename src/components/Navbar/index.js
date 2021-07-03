@@ -8,6 +8,7 @@ import {
 import {
   Menu,
   MenuItem,
+  MenuSocialMedia
 } from './NavbarConstructions'
 
 import { useState, useEffect } from 'react'
@@ -43,6 +44,7 @@ const Navbar = ({ route, refreshRoute }) => {
           <MenuItem name={'Projects'} path={'/projects'} route={route} onClick={() => menuItemClick('/projects')}/>
           <MenuItem name={'Blog'} path={'/blog'} route={route} onClick={() => menuItemClick('/blog')}/> 
           <MenuItem name={'About'} path={'/about'} route={route} onClick={() => menuItemClick('/about')}/>
+          <MenuSocialMedia/>
         </NavMenu>
       </NavContainer>
     </Nav>
