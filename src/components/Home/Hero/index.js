@@ -13,7 +13,7 @@ import { useHistory } from 'react-router-dom'
 import { FaAngleDoubleRight } from "react-icons/fa"
 import AmpersandLogo from '../../../images/ampersand.svg'
 
-const Hero = ({ refreshRoute, toggleContact }) => {
+const Hero = ({ refreshRoute, toggleContact, header1, header2, content, button }) => {
   const history = useHistory()
 
   const handleOnClick = () => {
@@ -30,12 +30,12 @@ const Hero = ({ refreshRoute, toggleContact }) => {
           </HeroImageContainer>
           <HeroItems>
             <h1>
-              <span style={{ color: "#35BAED" }}>Creative Solutions</span>
+              <span style={{ color: "#35BAED" }}>{header1}</span>
               <br />
-              <span style={{ color: "#1E6B88" }}>to Complex Problems.</span>
+              <span style={{ color: "#1E6B88" }}>{header2}</span>
             </h1>
-            <p>Web Design, Marketing &#38; Branding <br /> Digital Agency</p>
-            <button onClick={handleOnClick}>Our Work&nbsp; <FaAngleDoubleRight /></button>
+            <p>{content}</p>
+            {button && <button onClick={handleOnClick}>Our Work&nbsp; <FaAngleDoubleRight /></button>}
           </HeroItems>
         </ContentContainer>
       </HeroContent>

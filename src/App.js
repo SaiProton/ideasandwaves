@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Blog from './components/Blog'
 import LearnMore from './components/Learn-More';
+import About from './components/About'
 
 import { useState } from 'react'
 
@@ -45,6 +46,10 @@ const App = () => {
 
       <Route exact path={'/blog'}>
         <Blog toggleContact={toggleContact}/>
+      </Route>
+
+      <Route exact path={'/about'}>
+        <About toggleContact={toggleContact}/>
       </Route>
       <Footer/>
     </HashRouter>

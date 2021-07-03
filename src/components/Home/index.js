@@ -10,7 +10,13 @@ import Projects from "./Projects"
 const Home = ({ refreshRoute, toggleContact }) => {
   return(
     <>
-      <Hero refreshRoute={refreshRoute} toggleContact={toggleContact}/>
+      <Hero 
+        refreshRoute={refreshRoute} 
+        toggleContact={toggleContact}
+        header1={'Creative Solutions'}
+        header2={'to Complex Problems'}
+        content={<>Web Design, Marketing &#38; Branding <br /> Digital Agency</>}
+        button={true}/>
 
       <Services/>
 
