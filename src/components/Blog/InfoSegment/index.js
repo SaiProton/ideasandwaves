@@ -21,7 +21,7 @@ const InfoSegment = ({data}) => {
     <SegmentContainer>
       <LeftContainer>
         <PictureColorBox color={data.color}>
-          <SegmentPicture/>
+          <SegmentPicture src={data.image}/>
         </PictureColorBox>
       </LeftContainer>
       <RightContainer>

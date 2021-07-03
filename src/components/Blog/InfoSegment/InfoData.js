@@ -1,8 +1,13 @@
+import News from '../../../images/blog/news.svg'
+import FAQ from '../../../images/blog/faq.svg'
+import Work from '../../../images/blog/work.svg'
+
 export const InfoData = {
   'news': {
     'header': 'News',
     'desc': 'Stay up to date on industry related topics that shape the world around us',
     'color': '#2F1E88',
+    'image': News,
     'items': [
       {
         'headline': 'Here\'s a headline',
@@ -20,6 +25,7 @@ export const InfoData = {
     'header': 'FAQ',
     'desc': 'Stay up to date on industry related topics that shape the world around us',
     'color': '#2FAB2F',
+    'image': FAQ,
     'items': [
       {
         'headline': 'Here\'s a headline',
@@ -45,7 +51,8 @@ export const InfoData = {
   'work': {
     'header': 'Our Work',
     'desc': 'Stay up to date on industry related topics that shape the world around us',
-    'color': '#D96060',
+    'color': '#DB9044',
+    'image': Work,
     'items': [
       {
         'headline': 'Here\'s a headline',

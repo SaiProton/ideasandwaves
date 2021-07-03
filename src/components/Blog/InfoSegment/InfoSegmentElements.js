@@ -11,11 +11,16 @@ export const SegmentContainer = styled.div`
 `
 
 export const LeftContainer = styled.div`
+  display: flex;
   width: calc(100% / 3);
   border-right: 2px solid #bcbdbd;
 
   @media screen and (max-width: 900px) {
-    display: none;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    border: none;
+    /* display: none */
   }
 `
 
@@ -41,13 +46,32 @@ export const PictureColorBox = styled.div`
   background: ${props => props.color + '22'};
   width: 33vw;
   height: 25vw;
+
+  @media screen and (max-width: 900px) {
+    left: calc(15% / 2);
+    width: 85%;
+    height: 200px;
+    align-items: flex-start;
+    justify-content: center;
+
+    background: linear-gradient(
+      to bottom,
+      ${props => props.color + '55'},
+      #ffffff
+    );
+    
+    z-index: -10;
+  }
 `
 
 export const SegmentPicture = styled.img`
-  background: #bcbdbd;
   margin-left: -25%;
   width: 75%;
   height: 75%;
+
+  @media screen and (max-width: 900px) {
+    margin: -20px 0 0 0;
+  }
 `
 
 export const HeaderContainer = styled.div`
@@ -73,8 +97,18 @@ export const HeaderContainer = styled.div`
     width: 100%;
     height: 50%;
     margin: 0;
+    padding: 0 1rem;
 
     text-align: center;
+
+    h1 {
+      font-size: 3rem;
+      height: 100px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 `
 
@@ -84,12 +118,12 @@ export const ItemContainer = styled.div`
   margin-left: 3rem;
   height: 25vh;
   min-height: 200px;
-  width: 100%;
 
   @media screen and (max-width: 900px) {
     margin: 0;
     width: 100%;
     justify-content: center;
+    flex-direction: row-reverse;
   }
 `
 
@@ -97,6 +131,7 @@ export const ItemPicture = styled.img`
   height: 75%;
   width: calc(0.75 * max(200px, 25vh));
   margin-right: clamp(1rem, 2vw, 3rem);
+  margin-left: 0;
   border-radius: 1000px;
 
   background: #bcbdbd;
@@ -104,6 +139,8 @@ export const ItemPicture = styled.img`
   @media screen and (max-width: 900px) {
     height: 50%;
     width: calc(0.50 * max(200px, 25vh));
+    margin-left: clamp(1rem, 2vw, 3rem);
+    margin-right: 0;
   }
 `
 
