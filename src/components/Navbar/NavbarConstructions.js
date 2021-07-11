@@ -12,30 +12,30 @@ import {
   FaTwitter,
   FaInstagram,
   FaFacebook,
-  FaLinkedin
+  FaLinkedin,
 } from 'react-icons/all'
 
-export const MenuItem = ({ name, path, route, onClick }) => {
+export const MenuItem = ({ name, isOpen, path, route, onClick }) => {
   return(
-    <MenuItemContainer path={path} route={route}>
-      <MenuItemLink to={path} route={route} onClick={onClick}>{name}</MenuItemLink>
+    <MenuItemContainer path={path} isOpen={isOpen} route={route}>
+      <MenuItemLink to={path} route={route} isOpen={isOpen} onClick={onClick}>{name}</MenuItemLink>
     </MenuItemContainer>
   )
 }
 
-export const Menu = ({ onClick }) => {
+export const Menu = ({ onClick, isOpen }) => {
   return(
     <MenuToggle onClick={onClick}>
-      <MenuBar/>
-      <MenuBar/>
-      <MenuBar/>
+      <MenuBar isOpen={isOpen}/>
+      <MenuBar isOpen={isOpen}/>
+      <MenuBar isOpen={isOpen}/>
     </MenuToggle>
   )
 }
 
-export const MenuSocialMedia = () => {
+export const MenuSocialMedia = ({ isOpen }) => {
   return(
-    <SocialContainer>
+    <SocialContainer isOpen={isOpen}>
       <SocialWrapper>
         <SocialIcon href={'https://twitter.com/IdeasandWaves'}>
           <FaTwitter/>

@@ -10,7 +10,7 @@ import {
 import { useState } from 'react'
 import { Item, More } from './InfoConstructions'
 
-const InfoSegment = ({data}) => {
+const InfoSegment = ({id, data}) => {
   const [more, setMore] = useState(false)
 
   const toggleMore = () => {
@@ -18,7 +18,7 @@ const InfoSegment = ({data}) => {
   }
 
   return(
-    <SegmentContainer>
+    <SegmentContainer id={id}>
       <LeftContainer>
         <PictureColorBox color={data.color}>
           <SegmentPicture src={data.image}/>

@@ -26,13 +26,14 @@ const Footer = () => {
             <FooterSection data={FooterData.info}/>
           </FooterLinkWrapper>
           <FooterLinkWrapper>
+            <FooterSection data={FooterData.services}/>
             <FooterSection data={FooterData.contact}/>
           </FooterLinkWrapper>
         </FooterLinks>
         <SocialMedia>
           <SocialMediaWrap>
             <FooterLogo to={'/'}>IDEAS &#38; WAVES</FooterLogo>
-            <p>&copy; Ideas &#38; Waves Inc. 2021</p>
+            {/* <p>&copy; Ideas &#38; Waves Inc. 2021</p> */}
             <SocialIcons>
               <SocialIconLink
                 href={'https://twitter.com/IdeasandWaves'}

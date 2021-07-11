@@ -8,7 +8,7 @@ const Blog = ({ toggleContact }) => {
       <Hero toggleContact={toggleContact}/>
 
       { Object.keys(InfoData).map(key => {
-        return <InfoSegment key={key} data={InfoData[key]}/>
+        return <InfoSegment id={key} key={key} data={InfoData[key]}/>
       })}
       
     </>

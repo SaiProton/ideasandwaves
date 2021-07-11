@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const BlueButton = styled.button`
   border-radius: 100px;
   padding: 0.4rem 1rem;
+  font-size: 1.2rem;
 
   font-weight: bold;
   border: none;
@@ -12,6 +13,10 @@ export const BlueButton = styled.button`
   background: #35BAED;
     
   transition: 0.1s ease-out;
+
+  @media screen and (max-width: 900px) {
+    font-size: 1rem;
+  }
     
   &:hover {
     color: #ffffff;

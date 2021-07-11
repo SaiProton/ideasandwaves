@@ -13,7 +13,7 @@ const Services = () => {
       <ServicesWrapper>
         { Object.keys(ServicesData).map(key => {
           return(
-            <Service key={key}>
+            <Service key={key} href={ServicesData[key].href}>
               <h3>{ServicesData[key].title}</h3>
             </Service>
           )

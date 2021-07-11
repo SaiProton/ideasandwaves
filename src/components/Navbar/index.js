@@ -3,6 +3,7 @@ import {
   NavContainer,
   NavHeader,
   NavMenu,
+  MenuContainer
 } from './NavbarElements'
 
 import {
@@ -13,7 +14,10 @@ import {
 
 import { useState, useEffect } from 'react'
 
-import IdeasWavesLogo from '../../images/ideaswaveslogo.svg'
+import { Link } from 'react-router-dom'
+
+import IdeasWavesLogo from '../../images/logo.jpg'
+import IdeasWavesLogoMenu from '../../images/logo-menu.svg'
 
 const Navbar = ({ route, refreshRoute }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,7 +28,7 @@ const Navbar = ({ route, refreshRoute }) => {
 
   const menuItemClick = (path) => {
     refreshRoute(path)
-    setIsOpen(!isOpen)
+    setIsOpen(false)
   }
 
   useEffect(() => {
@@ -34,18 +38,21 @@ const Navbar = ({ route, refreshRoute }) => {
   })
 
   return(
-    <Nav shadow={shadowOpacity}>
+    <Nav isOpen={isOpen} shadow={shadowOpacity}>
       <NavContainer>
-        <NavHeader src={IdeasWavesLogo} alt={'Logo'}/>
-        <Menu onClick={() => setIsOpen(!isOpen)}/>
-        <NavMenu isOpen={isOpen}>
-          <MenuItem name={'Home'} path={'/'} route={route} onClick={() => menuItemClick('/')}/>
-          <MenuItem name={'Services'} path={'/services'} route={route} onClick={() => menuItemClick('/services')}/>
-          <MenuItem name={'Projects'} path={'/projects'} route={route} onClick={() => menuItemClick('/projects')}/>
-          <MenuItem name={'Blog'} path={'/blog'} route={route} onClick={() => menuItemClick('/blog')}/> 
-          <MenuItem name={'About'} path={'/about'} route={route} onClick={() => menuItemClick('/about')}/>
-          <MenuSocialMedia/>
-        </NavMenu>
+        <Link to={'/'} id={'logo'} onClick={() => menuItemClick('/')}>
+          <NavHeader src={isOpen ? IdeasWavesLogoMenu : IdeasWavesLogo} alt={'Logo'}/>
+        </Link> 
+        <MenuContainer>
+          <NavMenu isOpen={isOpen}>
+            <MenuItem name={'Services'} isOpen={isOpen} path={'/services'} route={route} onClick={() => menuItemClick('/services')}/>
+            <MenuItem name={'Projects'} isOpen={isOpen} path={'/projects'} route={route} onClick={() => menuItemClick('/projects')}/>
+            <MenuItem name={'Blog'} isOpen={isOpen} path={'/blog'} route={route} onClick={() => menuItemClick('/blog')}/> 
+            <MenuItem name={'About'} isOpen={isOpen} path={'/about'} route={route} onClick={() => menuItemClick('/about')}/>
+            <MenuSocialMedia isOpen={isOpen}/>
+          </NavMenu>
+          <Menu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
+        </MenuContainer> 
       </NavContainer>
     </Nav>
   )

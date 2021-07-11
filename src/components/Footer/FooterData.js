@@ -1,50 +1,68 @@
 export const FooterData = {
   'info': {
-    'header': 'Info',
+    'header': 'Blog',
     'links': [
       {
-        'name': 'Portfolio',
-        'href': '/'
+        'name': 'News',
+        'href': '/blog'
       },
       {
-        'name': 'Referrals',
-        'href': '/'
+        'name': 'FAQ',
+        'href': '/blog'
       },
       {
-        'name': 'Terms of Service',
-        'href': '/'
+        'name': 'Our Work',
+        'href': '/blog'
       }
     ]
   },
 
   'contact' : {
-    'header': 'Contact Us',
+    'header': 'Contact',
     'links': [
       {
-        'name': '1-800-277-3529',
-        'href': '/'
+        'name': '647-920-1374',
+        'href': 'tel:647-920-1374'
       },
       {
-        'name': 'contact@ideaswaves.com',
-        'href': 'mailto:contact@ideaswaves.com'
+        'name': 'info@ideaswaves.com',
+        'href': 'mailto:info@ideaswaves.com'
       },
     ]
   },
 
   'about': {
-    'header': 'About Us',
+    'header': 'About',
     'links': [
       {
-        'name': 'How it works',
+        'name': 'The Team',
         'href': '/'
       },
       {
-        'name': 'Testimonials',
+        'name': 'Who We Are',
         'href': '/'
       },
       {
-        'name': 'Careers',
-        'href': '/'
+        'name': 'Projects',
+        'href': '/projects'
+      }
+    ]
+  },
+
+  'services': {
+    'header': 'Services',
+    'links': [
+      {
+        'name': 'Web Design',
+        'href': '/services'
+      },
+      {
+        'name': 'App Design',
+        'href': '/services'
+      },
+      {
+        'name': 'Marketing',
+        'href': '/services'
       }
     ]
   }

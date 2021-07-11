@@ -9,8 +9,8 @@ export const Nav = styled.nav`
   top: 0;
   z-index: 100;
   height: 80px;
-  background-color: #ffffff;
-  box-shadow: 0 1px 4px ${props => (props.shadow)};
+  background-color: ${props => props.isOpen ? '#35BBEE' : '#ffffff'};
+  box-shadow: 0 1px 4px ${props => props.isOpen ? 'rgba(0, 0, 0, 0)' : (props.shadow)};
 `
 
 export const NavContainer = styled.div`
@@ -22,6 +22,14 @@ export const NavContainer = styled.div`
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 25px;
+
+  a#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+  }
 `
 
 export const NavHeader = styled.img`
@@ -30,7 +38,7 @@ export const NavHeader = styled.img`
 `
 
 export const MenuToggle = styled.div`
-  display: none;
+  display: block;
   cursor: pointer;
   
   @media screen and (max-width: 900px) {
@@ -38,26 +46,41 @@ export const MenuToggle = styled.div`
   }
 `
 
+export const MenuContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
+  margin: 0 2rem;
   
-  /* @media screen and (max-width: 900px) {
-    display: grid;
-    grid-template-columns: auto;
+  ${props => props.isOpen && css`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
     margin: 0;
     left: 0;
     padding: 0;
-    background: lightblue;
-    box-shadow: 0 1px 4px #00000066;
+
+    background: #35BBEE;
+    /* box-shadow: 0 1px 4px #00000066; */
+
     width: 100%;
+    height: calc(100vh - 80px);
+    min-height: 500px;
+
     position: absolute;
-    top: ${({ isOpen }) => (isOpen ? '80px' : '-1000px')};
-    opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
-    transition: 0.5s ease-in-out;
+
+    top: 80px;
+
     z-index: 999;
-  } */
+  `}
 
   @media screen and (max-width: 900px) {
     display: flex;
@@ -69,8 +92,8 @@ export const NavMenu = styled.ul`
     left: 0;
     padding: 0;
 
-    background: #17495B;
-    box-shadow: 0 1px 4px #00000066;
+    background: #35BBEE;
+    /* box-shadow: 0 1px 4px #00000066; */
 
     width: 100%;
     height: calc(100vh - 80px);
@@ -90,21 +113,37 @@ export const MenuItemContainer = styled.div`
   height: 80px;
   transition: 0.2s ease-in-out;
   margin: 1rem 0;
-  
-  ${props => props.path === props.route && css`
-    background: #667db6;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  &:nth-child(3) {
+    display: none;
+  }
+
+  &:nth-child(4) {
+    display: none;
+  }
+
+  ${props => props.isOpen && css`
+    width: 100%;
+
+    &:nth-child(3) {
+      display: block;
+    }
+
+    &:nth-child(4) {
+      display: block;
+    }
   `}
 
   @media screen and (max-width: 900px) {
     width: 100%;
 
-    ${props => props.path === props.route && css`
-      background: #2980B9;  /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #91EAE4, #6DD5FA, #17495B);  /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #91EAE4, #6DD5FA, #17495B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    `}
+    &:nth-child(3) {
+      display: block;
+    }
+
+    &:nth-child(4) {
+      display: block;
+    }
   }
 `
 
@@ -120,18 +159,30 @@ export const MenuItemLink = styled(Link)`
   transition: color 0.2s ease-in-out;
   
   ${props => props.to === props.route && css`
-    color: white;
+    color: black;
+  `}
+
+  ${props => props.isOpen && css`
+    width: 100%;
+    justify-content: flex-start;
+    color: #00000088;
+    font-size: 3rem;
+    padding-left: 20rem;
+
+    ${props => props.to === props.route && css`
+      color: black;
+    `}
   `}
   
   &:hover {
     transition: color 0.1s ease-in-out;
-    color: ${props => props.to === props.route && 'aquamarine' || 'black'};;
+    color: black;
   }
   
   @media screen and (max-width: 900px) {
     width: 100%;
     justify-content: flex-start;
-    color: #35BBEE;
+    color: #00000088;
     font-size: 1.5rem;
     padding-left: 2rem;
 
@@ -151,14 +202,27 @@ export const MenuBar = styled.span`
 
   border-radius: 100px;
 
-  &:last-child {
+  ${props => props.isOpen && css`
+    background: #ffffff;
+  `}
+
+  /* &:last-child {
     width: 50%;
     margin-left: 50%;
-  }
+  } */
 `
 
 export const SocialContainer = styled.div`
   display: none;
+
+  ${props => props.isOpen && css`
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding-right: 2rem;
+    height: 80px;
+  `}
 
   @media screen and (max-width: 900px) {
     display: flex;
@@ -175,13 +239,22 @@ export const SocialContainer = styled.div`
 
 export const SocialWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 
-  width: 50%;
+  width: 25%;
+
+  @media screen and (max-width: 900px) {
+    justify-content: space-between;
+    width: 50%;
+  }
 `
 
 export const SocialIcon = styled.a`
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+
+  @media screen and (max-width: 900px) {
+    font-size: 1.5rem;
+  }
 `

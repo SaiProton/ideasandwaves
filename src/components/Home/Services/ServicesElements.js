@@ -32,7 +32,7 @@ export const ServicesWrapper = styled.div`
   margin: 2rem 0 2rem 0;
 `
 
-export const Service = styled.div`
+export const Service = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,6 +42,7 @@ export const Service = styled.div`
   min-width: 300px;
 
   background: #2C8FB4;
+  text-decoration: none;
 
   border: 1px solid #ffffff;
 
