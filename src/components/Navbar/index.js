@@ -46,7 +46,7 @@ const Navbar = ({ route, refreshRoute }) => {
         <MenuContainer>
           <NavMenu isOpen={isOpen}>
             <MenuItem name={'Services'} isOpen={isOpen} path={'/services'} route={route} onClick={() => menuItemClick('/services')}/>
-            <MenuItem name={'Projects'} isOpen={isOpen} path={'/projects'} route={route} onClick={() => menuItemClick('/projects')}/>
+            {/* <MenuItem name={'Projects'} isOpen={isOpen} path={'/projects'} route={route} onClick={() => menuItemClick('/projects')}/> */}
             <MenuItem name={'Blog'} isOpen={isOpen} path={'/blog'} route={route} onClick={() => menuItemClick('/blog')}/> 
             <MenuItem name={'About'} isOpen={isOpen} path={'/about'} route={route} onClick={() => menuItemClick('/about')}/>
             <MenuSocialMedia isOpen={isOpen}/>

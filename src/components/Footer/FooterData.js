@@ -41,10 +41,6 @@ export const FooterData = {
       {
         'name': 'Who We Are',
         'href': '/'
-      },
-      {
-        'name': 'Projects',
-        'href': '/projects'
       }
     ]
   },

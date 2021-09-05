@@ -54,7 +54,7 @@ export const ItemsContainer = styled.div`
 
 export const ProjectItem = styled.div`
   height: 100%;
-  width: calc(100vw / 3);
+  width: 100%;
 
   border: 1px solid white;
 

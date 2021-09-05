@@ -13,12 +13,12 @@ const Projects = () => {
   return(
     <ProjectsContainer>
       <HeaderContainer>
-        <h1>Our Projects</h1>
+        <h1>Sample Projects</h1>
       </HeaderContainer>
       <ItemsContainer>
         <ProjectItem img={Project1}/>
         <ProjectItem img={Project2}/>
-        <ProjectItem/>
+        {/* <ProjectItem/> */}
       </ItemsContainer>
     </ProjectsContainer>
   )

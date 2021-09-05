@@ -20,7 +20,7 @@ export const JumboImage = styled.div`
 `
 
 export const ContentContainer = styled.div`
-  margin: 0 5rem;
+  margin: 5rem 5rem;
 
   h1 {
     color: #1E6B88;
